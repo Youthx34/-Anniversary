@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuestro Primer Aniversario</title>
+    <link rel="stylesheet" href="Stilo.css">
+</head>
+<body>
+    <!-- Audio de fondo -->
+    <audio id="Carencias_de_cordura" loop>
+        <source src="Carencias_de_cordura.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Botón para reproducir/pausar -->
+    <button id="play-pause-btn">▶️</button>
+
+<!-- Contenedor para las chispas -->
+<div class="sparkle-container">
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+</div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5caca;
+            text-align: center;
+            padding: 50px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: auto;
+        }
+        h1 {
+            color: #800000;
+            font-size: 40px;
+            margin: 10px 0;
+            text-shadow: 0 2px 4px rgba(128, 0, 0, 0.3);
+            background-color: #f5cacaa3;
+        }
+        p {
+            font-size: 25px;
+            color: #000000;
+            max-width: 600px;
+            margin: 20px auto;
+            line-height: 1.5;
+            background-color: #f5cacaa1;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Añadimos transición para la opacidad */
+            opacity: 0.6; /* Imagen semitransparente por defecto */
+        }
+        img:hover {
+            transform: scale(1.05); /* Se agranda */
+            opacity: 1; /* Se vuelve sólida */
+        }
+        .heart {
+            color: #800000;
+            font-size: 40px;
+            animation: pulse 1.5s infinite;
+            background-color: #f5caca00;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 28px; }
+            p { font-size: 18px; }
+            .heart { font-size: 30px; }
+            img { max-width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+        <div class="slide slide1"></div>
+        <div class="slide slide2"></div>
+        <div class="slide slide3"></div>
+        <div class="slide slide4"></div>
+        <div class="slide slide5"></div>
+        <div class="slide slide6"></div>
+        <div class="slide slide7"></div>
+        <div class="slide slide8"></div>
+        <div class="slide slide9"></div>
+    </div>
+    <h1>¡Feliz Primer Aniversario Mi Niña Hermosa!</h1>
+    <h1>TE AMO DEMASIADO 🌙</h1>
+    <p>Estos 365 días increíbles a tu lado, han sido los mejores y no imagino mi vida sin ti. Gracias por cada sonrisa, cada abrazo y cada momento juntos. Te amo con todo mi corazón.</p>
+    <p class="heart">❤️</p>
+    <img src="https://i.ibb.co/6wK7JRS/Casita-del-arbol-2.jpg" alt="Nosotros juntos">
+    
+    <!-- Java para controlar el audio -->
+    <script>
+        const audio = document.getElementById('Carencias_de_cordura');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = '⏸️';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = '▶️';
+            }
+        });
+    </script>
+</body>
+
+
+<!--Ideas extra -->
+
+<!--Galeria -->
+<div class="gallery">
+    <div class="moment">
+        <img src="https://i.ibb.co/j5VdxGv/Casita-del-arbol-1.jpg" alt="Casita del árbol">
+        <p>Nuestra aventura en la casita del árbol nunca los olvidare.</p>
+    </div>
+    <div class="moment">
+        <img src="https://i.ibb.co/SwSPYxTx/IMG-20250307-WA0026.jpg" alt="Otro momento">
+        <p>El día que me hiciste el hombre más feliz del mundo.</p>
+    </div>
+    <div class="moment">
+        <img src="https://i.ibb.co/1LT0PV6/En-el-taxi-2.jpg" alt="Otro momento">
+        <p>Los momentos mas felices los pase contigo.</p>
+    </div>
+
+</div>
+
+
+<!-- boton con mensaje -->
+ <body>
+    
+ <button id="surprise-btn">Una sorpresa para ti 🤭</button>
+ <div id="surprise-message" style="display: none;">
+    <p>¡Eres lo mejor que me ha pasado! Te amo infinitamente ❤️</p>
+ </div>
+ <script>
+
+ const surpriseBtn = document.getElementById('surprise-btn');
+ const surpriseMessage = document.getElementById('surprise-message');
+ 
+ surpriseBtn.addEventListener('click', () => {
+     surpriseMessage.style.display = 'block';
+     surpriseMessage.classList.add('fade-in');
+ });
+</script>
+</body>
+
+<!-- contador de dias -->
+
+<H2>Hemos estado juntos por <span id="days-together"></span> días ❤️</H2>
+<script>
+    const startDate = new Date('2024-04-06'); // Cambia esta fecha por la de su aniversario
+const today = new Date();
+const timeDiff = today - startDate;
+const daysTogether = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+document.getElementById('days-together').textContent = daysTogether;
+</script>
+
+<!--COrazones -->
+
+<div class="heart-container">
+    <div class="floating-heart">❤️</div>
+    <div class="floating-heart">❤️</div>
+    <div class="floating-heart">❤️</div>
+</div>
+
+
+</html>
+
